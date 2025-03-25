@@ -1,0 +1,1100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background: #fff;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+/* Style for the navbar logo */
+.logo-image {
+  display: block; 
+  width: 95px; 
+  height: 95px; 
+  background-image: url('pictures/Paw-some\ img-Photoroom.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
+
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  color: #000000;
+}
+
+.navbar__item {
+  height: 80px;
+}
+
+.navbar__links {
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  text-decoration: none;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.navbar__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #833ab4;
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.navbar__links:hover {
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0;
+  }
+
+  .navbar__menu {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+
+  .navbar__menu.active {
+    background: #fff;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 60vh;
+    font-size: 1.6rem;
+  }
+
+  #navbar__logo {
+    padding-left: 25px;
+  }
+
+  /*drop down menu thiny*/
+.navbar__toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #000000;
+  }
+
+  .navbar__item {
+    width: 100%;
+  }
+
+  .navbar__links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .navbar__btn {
+    padding-bottom: 2rem;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    margin: 0;
+  }
+
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  .navbar__toggle .bar {
+    display: block;
+    cursor: pointer;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+/* Welcome Heading Slide */
+.hero {
+background-color: #fff;
+padding: 200px 0;
+}
+
+.hero__container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+height: 90%;
+text-align: center;
+padding: 30px;
+position: relative; /* Added to allow layering within the container */
+}
+
+.hero__container img {
+position: absolute;
+top: 50%; /* Centers the logo vertically */
+left: 50%; /* Centers the logo horizontally */
+transform: translate(-50%, -50%);
+z-index: 0; /* Sends the logo to the background */
+width: 400px; /* Adjust size as needed */
+opacity: 0.2; /* Makes the logo semi-transparent */
+}
+
+.hero__heading {
+font-size: 100px;
+margin-bottom: 24px;
+color: #fff;
+position: relative; /* Ensures the heading is above the logo */
+z-index: 1; /* Places the heading on top */
+}
+
+.hero__heading span {
+background: #ee0979; /* fallback for old browsers */
+background: -webkit-linear-gradient(
+  to right,
+  #007991,
+  #78ffd6
+); /* Chrome 10-25, Safari 5.1-6 */
+background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-size: 100%;
+-webkit-background-clip: text;
+-moz-background-clip: text;
+-webkit-text-fill-color: transparent;
+-moz-text-fill-color: transparent;
+}
+
+.hero__description {
+font-size: 60px;
+background: #da22ff; /* fallback for old browsers */
+background: -webkit-linear-gradient(
+  to right,
+  #9114ff,
+  #da22ff
+); /* Chrome 10-25, Safari 5.1-6 */
+background: #203A43; /* fallback for old browsers */
+background-size: 100%;
+-webkit-background-clip: text;
+-moz-background-clip: text;
+-webkit-text-fill-color: transparent;
+-moz-text-fill-color: transparent;
+position: relative; /* Ensures the description is above the logo */
+z-index: 1; /* Places the description on top */
+}
+
+.highlight {
+border-bottom: 4px solid rgb(132, 0, 255);
+}
+
+@media screen and (max-width: 768px) {
+.hero__heading {
+  font-size: 60px;
+}
+
+.hero__description {
+  font-size: 40px;
+}
+}
+
+
+/* About Section */
+.main {
+  background-color: #fff;
+  padding: 10rem 0;
+}
+
+.main__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 90%;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 50px;
+}
+
+/*text for schedule to call*/
+.main__content {
+  color: #203A43;
+  width: 100%;
+}
+
+.main__content h1 {
+  font-size: 2rem;
+  background-color: #00dbde;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.main__content h2 {
+  font-size: 4rem;
+  background: #ff8177; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #9114ff,
+    #da22ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8f0eff,
+    #da22ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.main__content p {
+  font-size: 18px; /* Adjust the size as needed */
+  line-height: 1.6; /* Optional for readability */
+}
+
+
+.main__btn {
+  font-size: 1.4rem;
+  background: #833ab4;
+  background: #007991;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #78ffd6, #007991);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.35s;
+  outline: none;
+}
+
+.main__btn a {
+  position: relative;
+  z-index: 2;
+  color: #000000;
+  text-decoration: none;
+}
+
+.main__btn:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #00677b;
+  transition: all 0.35s;
+  border-radius: 4px;
+}
+
+.main__btn:hover {
+  color: #000000;
+}
+
+.main__btn:hover:after {
+  width: 100%;
+}
+
+.main__img--container {
+  text-align: center;
+}
+
+
+
+/*come back and figure out how to put a image here instead of the gradiant and the little guy*/
+.main__img--card {
+  margin: 10px;
+  height: 500px;
+  width: 500px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  background: url('poppy.jpg') center/cover no-repeat;
+}
+
+.fa-layer-group,
+.fa-users {
+  font-size: 0rem;
+}
+
+#card-2 {
+  background: #ff512f;
+  background: -webkit-linear-gradient(to right, #dd2476, #ff512f);
+  background: linear-gradient(to right, #dd2476, #ff512f);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 1100px) {
+  .main__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 90%;
+  }
+
+  .main__img--container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main__img--card {
+    height: 425px;
+    width: 425px;
+  }
+
+  .main__content {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .main__content h1 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .main__content h2 {
+    font-size: 3rem;
+  }
+
+  .main__content p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main__img--card {
+    width: 250px;
+    height: 250px;
+  }
+
+  .fa-users,
+  .fa-layer-group {
+    font-size: 4rem;
+  }
+
+  .main__content h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+  .main__content h2 {
+    font-size: 2rem;
+  }
+
+  .main__content p {
+    margin-top: 2rem;
+  }
+
+  .main__btn {
+    padding: 12px 36px;
+    margin: 2.5rem 0;
+  }
+}
+
+/* Services Section */
+.services {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10rem 0;
+}
+
+.services h1 {
+  background-color: #1ccef1;
+  background-image: background: #007991;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #78ffd6, #007991);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  margin-bottom: 5rem;
+  font-size: 2.5rem;
+}
+
+.services__wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Five columns */
+  gap: 10px; /* Space between the cards */
+}
+
+
+.services__card {
+  margin: 10px;
+  height: 425px;
+  width: 300px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #00fff2;
+  background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+  transition: 0.3s ease-in;
+  text-decoration: none; /* Prevent link underline */
+}
+/*change this for the puppy logo thing*/
+.services__card:nth-child(1) {
+  background: url('pictures/mom-min.jpg') center/cover no-repeat;
+}
+
+.services__card:nth-child(2) {
+  background: url('pictures/dad-min.jpg') center/cover no-repeat;
+}
+
+
+  
+  .services__card:nth-child(3) {
+    background: url('pictures/dagan-min.jpg') center/cover no-repeat;
+  }
+  .services__card:nth-child(4) {
+    background: url('pictures/addie-min.jpg') center/cover no-repeat;
+  }
+
+.services__card h2 {
+  text-align: center;
+}
+
+.services__card p {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 20px;
+}
+
+.services__btn {
+  display: flex;
+  justify-content: center; /* This will center the button */
+  align-items: center;
+  margin-top: 16px;
+  width: 100%; /* Ensure the parent container takes full width */
+}
+
+
+.main__btn {
+  font-size: 1.2rem;
+  padding: 8px 20px;
+  background: #007991;
+  background: -webkit-linear-gradient(to right, #78ffd6, #007991);
+  background: linear-gradient(to right, #78ffd6, #007991);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+
+.main__btn a {
+  color: #000000;
+  text-decoration: none;
+}
+
+
+.services__card:hover {
+  transform: scale(1.075);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1300px) {
+  .services__wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer CSS */
+.footer__container {
+  background-color: #fff;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer__logo {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.footer__links {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__link--wrapper {
+  display: flex;
+}
+
+.footer__link--items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 16px;
+  text-align: left;
+  width: 160px;
+  box-sizing: border-box;
+}
+
+.footer__link--items h2 {
+  margin-bottom: 16px;
+  color: #000000;
+}
+
+.footer__link--items a {
+  color: #000000;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: 0.3 ease-out;
+}
+
+.footer__link--items a:hover {
+  color: #007991;
+  transition: 0.3 ease-out;
+}
+
+.social__icon--link {
+  color: #000000;
+  font-size: 24px;
+}
+
+.social__media {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.social__media--wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+}
+
+.social__icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+}
+
+.website__rights {
+  color: #000000;
+}
+
+@media screen and (max-width: 820px) {
+  .footer__links {
+    padding-top: 2em;
+  }
+
+  #footer__logo {
+    margin-bottom: 2rem;
+  }
+
+  .website__rights {
+    margin-bottom: 2rem;
+  }
+
+  .footer__link--wrapper {
+    flex-direction: column;
+  }
+
+  .social__media--wrap {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer__link--items {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+
+/* Testimonial Section Styles */
+.testimonial-section {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.testimonial-slider {
+  overflow: hidden; /* Hide overflowing testimonials */
+  position: relative; /* Relative positioning for arrows */
+  width: 100%; /* Full width for the slider */
+}
+
+.testimonial-wrapper {
+  display: flex; /* Align testimonials in a row */
+  transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+.testimonial {
+  min-width: 25%; /* Each testimonial takes up 25% of the slider */
+  padding: 10px; /* Add padding around testimonials */
+}
+
+.testimonial img {
+  width: 200px; /* Set the width to match the puppy images */
+  height: 200px; /* Set the height to match the puppy images */
+  object-fit: cover; /* Ensures the image covers the slot without distortion */
+  border-radius: 10px; /* Rounded corners for images */
+  margin-bottom: 15px; /* Space between image and text */
+}
+
+.prev-btn, .next-btn {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border: none; /* Remove border */
+  border-radius: 50%; /* Round buttons */
+  cursor: pointer;
+  color: black; /* Set arrow color to black */
+  font-size: 24px; /* Arrow size */
+  padding: 10px; /* Button padding */
+  position: absolute; /* Absolute positioning */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for vertical alignment */
+  z-index: 10; /* Ensure buttons are above other content */
+}
+
+.prev-btn {
+  left: 10px; /* Position left */
+}
+
+.next-btn {
+  right: 10px; /* Position right */
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Change background on hover */
+}
+
+.testimonial-section h2 {
+  margin-bottom: 30px; /* Increase space between heading and slider */
+  display: inline-flex; /* Align items inline */
+  align-items: center; /* Center items vertically */
+}
+
+.dash {
+  margin: 0 10px; /* Space around the dash */
+}
+
+/* Default state - black button with white text */
+/* Smaller button */
+.leave-review-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px; /* Make the button smaller */
+  font-size: 12px; /* Smaller text */
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-left: 50px; /* Aligns the button to the right */
+  display: block; /* Make sure it's treated like a block element to use margin */
+}
+
+/* Ensure the link inside the button has white text and no underline */
+.leave-review-btn a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hover state */
+.leave-review-btn:hover {
+  background-color: #007BFF; /* Blue color on hover */
+  color: white;
+}
+
+.about-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.about-section:nth-child(even) {
+  flex-direction: left;
+}
+
+.about-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color:#2c3e50
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000000;
+}
+
+.about-image {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 400px; /* Set a consistent max width for all images */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 10px; /* Optional: add rounded corners */
+  display: block; /* Centers the image within its container */
+  margin: 0 auto; /* Center alignment */
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .about-section {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .about-section:nth-child(even) {
+      flex-direction: column;
+  }
+}
+/* Dropdown Menu Styling */
+.dropdown {
+  position: relative;
+}
+
+.dropdown__menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+.dropdown__menu li {
+  width: 200px;
+}
+
+.dropdown__menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #000;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown__menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown__menu {
+  display: block;
+}
+.team-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #54c5a3; /* Adjust color to match your design */
+  font-weight: bold;
+}
+.call-now-button {
+  background: #007991;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.call-now-button:hover {
+  background: #005f6b;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 960px) {
+  .navbar__menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center; /* Center align menu items */
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .navbar__call {
+    width: 100%; /* Make sure the button spans the full width */
+    display: flex;
+    justify-content: center; /* Center align the button */
+    margin-top: 20px; /* Add some spacing above */
+  }
+
+  .call-now-button {
+    width: auto; /* Allow natural width */
+    padding: 10px 30px; /* Adjust padding for better appearance */
+    text-align: center;
+    border-radius: 5px;
+  }
+}
+.footer__extras {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to the bottom-left */
+  position: absolute;
+  bottom: 10px; /* Adjust based on spacing */
+  left: 10px; /* Adjust based on spacing */
+}
+
+.footer__extras .footer__link {
+  color: #007991; /* Match theme color */
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.footer__extras .footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__logo-image {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+}
+.footer__container {
+  position: relative; /* Ensure positioning context */
+}
+
+.footer__extras {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed to align properly */
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer__link {
+  color: #007991;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__logo-image {
+  width: 50px; /* Adjust as needed */
+  height: auto;
+}
+.footer__extras {
+  position: absolute; /* Position it within the footer */
+  bottom: 100px; /* Distance from the bottom */
+  left: 100px; /* Distance from the left */
+}
+
+.footer__extras a {
+  display: inline-block; /* Ensure the clickable area wraps the image */
+}
+
+.footer__logo-image {
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+}
+/* Footer Responsive Styles */
+@media screen and (max-width: 768px) {
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .footer__links {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .footer__link--wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .footer__link--items {
+    align-items: center;
+    text-align: center;
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .footer__link--items h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer__link--items a {
+    font-size: 1rem;
+  }
+
+  .social__media--wrap {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .social__icons {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .footer__logo-image {
+    margin-top: 1rem;
+    width: 100px; /* Adjust logo size for mobile */
+  }
+}
+/* Adjust the position of the GoodDog logo */
+.footer__extras {
+  position: relative;
+  margin-top: 1rem; /* Adds spacing from the content above */
+  text-align: center; /* Centers the GoodDog logo */
+}
+
+.footer__logo-image {
+  width: 120px; /* Adjust size as needed */
+  margin-bottom: 1rem;
+}

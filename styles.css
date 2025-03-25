@@ -1,0 +1,2063 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background: #fff;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+/* Style for the navbar logo */
+.logo-image {
+  display: block; 
+  width: 95px; 
+  height: 95px; 
+  background-image: url('DentonRoofingLogo.pdf'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
+
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  color: #000000;
+}
+
+.navbar__item {
+  height: 80px;
+}
+
+.navbar__links {
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  text-decoration: none;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.navbar__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.navbar__links:hover {
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0;
+  }
+
+  .navbar__menu {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+
+  .navbar__menu.active {
+    background: #fff;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 60vh;
+    font-size: 1.6rem;
+  }
+
+  #navbar__logo {
+    padding-left: 25px;
+  }
+
+  /*drop down menu thiny*/
+.navbar__toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #000000;
+  }
+
+  .navbar__item {
+    width: 100%;
+  }
+
+  .navbar__links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .navbar__btn {
+    padding-bottom: 2rem;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    margin: 0;
+  }
+
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  .navbar__toggle .bar {
+    display: block;
+    cursor: pointer;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+/* welcome heading slide */
+.hero {
+  position: relative;
+  background: url('guywithbagsonback.jpg') center/cover no-repeat; /* Replace 'real-dog.jpg' with your real dog image path */
+  height: 600px; /* Adjust height as needed */
+  padding: 200px 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Optional: Semi-transparent overlay for better text readability */
+  z-index: 0;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 90%;
+  text-align: center;
+  padding: 30px;
+  position: relative; /* Ensures text appears above the background */
+  z-index: 1; /* Places text above the image and overlay */
+}
+
+.hero__heading {
+  font-size: 100px;
+  margin-bottom: 24px;
+  color: #ffffff; /* Text color for visibility */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for contrast */
+}
+
+.hero__description {
+  font-size: 60px;
+  color: #ffffff; /* Text color for visibility */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for contrast */
+}
+
+@media screen and (max-width: 768px) {
+  .hero__heading {
+    font-size: 60px;
+  }
+
+  .hero__description {
+    font-size: 40px;
+  }
+}
+
+
+
+/* About Section */
+.main {
+  background-color: #fff;
+  padding: 10rem 0;
+}
+
+.main__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 90%;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 50px;
+}
+
+/*text for schedule to call*/
+.main__content {
+  color: #203A43;
+  width: 100%;
+}
+
+.main__content h1 {
+  font-size: 2.8rem; /* Increased for strong emphasis */
+  background-color: #2c3e50;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-transform: uppercase;
+  margin-bottom: 2rem; /* Space between the header and paragraph */
+}
+
+.main__content h2 {
+  font-size: 3rem; /* More noticeable subheadings */
+  background: #bdc3c7;
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.main__content p {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.main__content p + p {
+  margin-top: 1.5rem; /* Only applies margin to paragraphs following another paragraph */
+}
+
+
+
+.main__btn {
+  font-size: 1.4rem;
+  background: #833ab4;
+  background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.35s;
+  outline: none;
+}
+
+.main__btn a {
+  position: relative;
+  z-index: 2;
+  color: #000000;
+  text-decoration: none;
+}
+
+.main__btn:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #00677b;
+  transition: all 0.35s;
+  border-radius: 4px;
+}
+
+.main__btn:hover {
+  color: #000000;
+}
+
+.main__btn:hover:after {
+  width: 100%;
+}
+
+.main__img--container {
+  text-align: center;
+}
+
+/*come back and figure out how to put a image here instead of the gradiant and the little guy*/
+.main__img--card {
+  margin: 10px;
+  height: 500px;
+  width: 500px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  background: url('guywalkingonhouse.jpg') center/cover no-repeat;
+}
+
+
+
+#card-2 {
+  background: url('skylight\ install-min.jpg') center/cover no-repeat;
+}
+
+
+/* Mobile Responsive */
+@media screen and (max-width: 1100px) {
+  .main__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 90%;
+  }
+
+  .main__img--container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main__img--card {
+    height: 425px;
+    width: 425px;
+  }
+
+  .main__content {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .main__content h1 {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  .main__content h2 {
+    font-size: 1.5rem;
+  }
+
+  .main__content p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main__img--card {
+    width: 250px;
+    height: 250px;
+  }
+
+  .fa-users,
+  .fa-layer-group {
+    font-size: 4rem;
+  }
+
+  .main__content h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+  .main__content h2 {
+    font-size: 1.5rem;
+  }
+
+  .main__content p {
+    margin-top: 2rem;
+  }
+
+  .main__btn {
+    padding: 12px 36px;
+    margin: 2.5rem 0;
+  }
+}
+
+/* Services Section */
+.services {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10rem 0;
+}
+
+.services h1 {
+  background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  margin-bottom: 5rem;
+  font-size: 2.5rem;
+}
+
+.services__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.services__card {
+  margin: 10px;
+  height: 425px;
+  width: 300px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+  transition: 0.3s ease-in;
+}
+/*change this for the puppy logo thing*/
+.services__card:nth-child(1) {
+  background: url('guy\ on\ damaged\ house.jpg') center/cover no-repeat;
+}
+
+.services__card:nth-child(2) {
+  background: url('treenhouse.jpg') center/cover no-repeat;
+}
+
+.services__card:nth-child(3) {
+  background: url('guywithbagsonback.jpg') center/cover no-repeat;
+}
+
+.services__card:nth-child(4) {
+  background: url('metal\ roofing-min.jpg') center/cover no-repeat;
+}
+
+.services__card:nth-child(5) {
+  background: url('gutter\ installation-min.jpg') center/cover no-repeat;
+}
+.services__card:nth-child(6) {
+  background: url('roof\ coating-min.jpg') center/cover no-repeat;
+}
+.services__card:nth-child(7) {
+  background: url('tile\ roofing-min.jpg') center/cover no-repeat;
+}
+.services__card:nth-child(8) {
+  background: url('skylight\ install-min.jpg') center/cover no-repeat;
+}
+
+
+/* And continue for each service card */
+
+
+
+
+
+.services__card h2 {
+  text-align: center;
+}
+
+.services__card p {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 20px;
+}
+
+.services__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  width: 100%; /* Full width */
+  grid-column: span 4; /* Span all 4 columns in the grid layout */
+}
+
+
+
+.main__btn {
+  font-size: 1.2rem;
+  padding: 8px 20px;
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+
+.main__btn a {
+  color: #000000;
+  text-decoration: none;
+}
+
+
+.services__card:hover {
+  transform: scale(1.075);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1300px) {
+  .services__wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensure items are centered */
+    gap: 16px; /* Add spacing between items */
+  }
+
+  .services__card {
+    width: 300px; /* Set a consistent width */
+    height: 425px; /* Maintain the same height */
+    max-width: 100%; /* Allow flexibility for smaller screens */
+  }
+
+  .services__btn {
+    margin-top: 16px;
+    width: auto; /* Allow button to size itself naturally */
+    grid-column: auto; /* Remove the spanning rule */
+  }
+}
+
+/* Footer CSS */
+.footer__container {
+  background-color: #fff;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer__logo {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.footer__links {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__link--wrapper {
+  display: flex;
+}
+
+.footer__link--items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 16px;
+  text-align: left;
+  width: 160px;
+  box-sizing: border-box;
+}
+
+.footer__link--items h2 {
+  margin-bottom: 16px;
+  color: #000000;
+}
+
+.footer__link--items a {
+  color: #000000;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: 0.3 ease-out;
+}
+
+.footer__link--items a:hover {
+  color: #4A00E0;
+  transition: 0.3 ease-out;
+}
+
+.social__icon--link {
+  color: #000000;
+  font-size: 24px;
+}
+
+.social__media {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.social__media--wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+}
+
+.social__icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+}
+
+.website__rights {
+  color: #000000;
+}
+
+@media screen and (max-width: 820px) {
+  .footer__links {
+    padding-top: 2em;
+  }
+
+  #footer__logo {
+    margin-bottom: 2rem;
+  }
+
+  .website__rights {
+    margin-bottom: 2rem;
+  }
+
+  .footer__link--wrapper {
+    flex-direction: column;
+  }
+
+  .social__media--wrap {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer__link--items {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+
+/* Testimonial Section Styles */
+.testimonial-section {
+  text-align: center;
+  margin: 50px 0;
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 20px 10px;
+  border-radius: 8px; /* Modern look with rounded corners */
+}
+
+.testimonial-slider {
+  position: relative; /* Relative positioning for arrows */
+  width: 100%; /* Full width for the slider */
+  overflow: hidden; /* Hide overflow for sliding effect */
+}
+
+.testimonial-wrapper {
+  display: flex; /* Align testimonials in a row */
+  transition: transform 0.5s ease; /* Smooth transition for sliding */
+  will-change: transform; /* Optimize for sliding performance */
+}
+
+.testimonial {
+  flex: 0 0 25%; /* Default: Each testimonial takes up 25% of the slider */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width calculation */
+  text-align: left; /* Align text left for readability */
+  background: #ffffff; /* White card background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.testimonial img {
+  width: 100px; /* Adjust width for avatar */
+  height: 100px; /* Adjust height for avatar */
+  object-fit: cover; /* Ensure the image scales properly */
+  border-radius: 50%; /* Circular images */
+  margin-bottom: 15px; /* Spacing between image and text */
+}
+
+.testimonial h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333; /* Dark text for better readability */
+}
+
+.testimonial p {
+  font-size: 0.9rem;
+  color: #666; /* Subtle text color */
+  line-height: 1.6; /* Better text readability */
+}
+
+/* Navigation arrows */
+.prev-btn, .next-btn {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border: none; /* Remove border */
+  border-radius: 50%; /* Rounded buttons */
+  cursor: pointer;
+  color: black; /* Arrow color */
+  font-size: 24px; /* Arrow size */
+  padding: 10px;
+  position: absolute; /* Position buttons */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  z-index: 10; /* Ensure buttons are above other content */
+}
+
+.prev-btn {
+  left: 10px; /* Position on the left */
+}
+
+.next-btn {
+  right: 10px; /* Position on the right */
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly darker hover effect */
+}
+
+/* Heading for Testimonials */
+.testimonial-section h2 {
+  margin-bottom: 50px; /* Space below heading */
+  font-size: 2rem;
+  color: #000000; /* Matching theme color */
+}
+
+/* Responsive Styles for Mobile */
+@media screen and (max-width: 768px) {
+  .testimonial-wrapper {
+    flex-wrap: nowrap; /* Ensure no wrapping */
+    transform: translateX(0); /* Reset slider position */
+  }
+
+  .testimonial {
+    flex: 0 0 100%; /* Each testimonial takes full width */
+  }
+
+  .prev-btn, .next-btn {
+    top: 90%; /* Position buttons below testimonials */
+    transform: translateY(-10%);
+    padding: 8px;
+  }
+
+  .prev-btn {
+    left: 20px; /* Adjust spacing on the left */
+  }
+
+  .next-btn {
+    right: 20px; /* Adjust spacing on the right */
+  }
+}
+
+/* Button Styles */
+.leave-review-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-left: 50px;
+}
+
+.leave-review-btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.leave-review-btn:hover {
+  background-color: #007BFF; /* Blue hover effect */
+  color: white;
+}
+
+
+
+.glad-section {
+  background-color: white; /* Light background for contrast */
+  padding: 4rem 2rem; /* Adjust spacing */
+  text-align: center; /* Center-align text */
+}
+
+.glad-container {
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container */
+  padding: 0 1rem; /* Add some padding */
+}
+
+.glad-section h1 {
+  font-size: 2.5rem;
+  color: #000000; /* Matching theme colors */
+  margin-bottom: 1.5rem;
+}
+
+.glad-section p {
+  font-size: 1.1rem;
+  color: #333; /* Dark text for readability */
+  line-height: 1.8; /* Improve readability */
+  margin-bottom: 1rem;
+}
+
+.puppies-section {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.litter {
+  margin-bottom: 2rem;
+}
+
+.litter h2 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.litter p {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+ {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.puppy-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: calc(30% - 1rem); /* Adjusted width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.puppy-card img {
+  width: 100%;
+  height: 300px; /* Increased height to show more of the puppy */
+  object-fit: cover; /* Ensures the image scales properly */
+}
+
+.puppy-info {
+  padding: 1rem;
+}
+
+.puppy-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.puppy-info p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.status.reserved {
+  background: #f0f0f0;
+  color: #999;
+}
+
+.status.available {
+  background: #d4edda;
+  color: #155724;
+}
+
+/* Dropdown Menu Styling */
+.dropdown {
+  position: relative;
+}
+
+.dropdown__menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+.dropdown__menu li {
+  width: 200px;
+}
+
+.dropdown__menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #000;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown__menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown__menu {
+  display: block;
+}
+
+.map-section {
+  text-align: center;
+  padding: 15rem 0 15rem; /* Top 4rem, bottom 2rem */
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.map-section h2 {
+  font-size: 2rem;
+  color: #000000; /* Matching the theme color */
+  margin-bottom: 1rem;
+}
+
+.map-section iframe {
+  border: none;
+  width: 90%; /* Responsive width */
+  max-width: 800px; /* Limit the max width */
+  height: 450px;
+  border-radius: 8px; /* Rounded corners for better aesthetics */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+.footer__extras {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to the bottom-left */
+  position: absolute;
+  bottom: 10px; /* Adjust based on spacing */
+  left: 10px; /* Adjust based on spacing */
+}
+
+.footer__extras .footer__link {
+  color: #007991; /* Match theme color */
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.footer__extras .footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__logo-image {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+}
+.footer__container {
+  position: relative; /* Ensure positioning context */
+}
+
+.footer__extras {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed to align properly */
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer__link {
+  color: #007991;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__logo-image {
+  width: 50px; /* Adjust as needed */
+  height: auto;
+}
+.footer__extras {
+  position: absolute; /* Position it within the footer */
+  bottom: 100px; /* Distance from the bottom */
+  left: 100px; /* Distance from the left */
+}
+
+.footer__extras a {
+  display: inline-block; /* Ensure the clickable area wraps the image */
+}
+
+.footer__logo-image {
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+}
+/* Footer Responsive Styles */
+@media screen and (max-width: 768px) {
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .footer__links {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .footer__link--wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .footer__link--items {
+    align-items: center;
+    text-align: center;
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .footer__link--items h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer__link--items a {
+    font-size: 1rem;
+  }
+
+  .social__media--wrap {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .social__icons {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .footer__logo-image {
+    margin-top: 1rem;
+    width: 100px; /* Adjust logo size for mobile */
+  }
+}
+/* Adjust the position of the GoodDog logo */
+.footer__extras {
+  position: relative;
+  margin-top: 1rem; /* Adds spacing from the content above */
+  text-align: center; /* Centers the GoodDog logo */
+}
+
+.footer__logo-image {
+  width: 120px; /* Adjust size as needed */
+  margin-bottom: 1rem;
+}
+
+/* Spread out social media icons */
+.social__icons {
+  display: flex;
+  justify-content: space-evenly; /* Adds equal spacing between icons */
+  margin-top: 1rem; /* Adds spacing above the icons */
+  width: 60%; /* Adjusts the width of the icon container */
+  max-width: 300px; /* Limits the maximum width for better alignment */
+}
+/* Centering the Leave a Review Button */
+.leave-review-btn {
+  display: inline-block; /* Ensures it remains inline */
+  margin: 1rem auto; /* Centers it horizontally */
+  text-align: center; /* Centers the text within the button */
+}
+
+.testimonial-section h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonial-section h2 .leave-review-btn {
+  margin-top: 1rem; /* Adds spacing between the title and button */
+}
+@media screen and (max-width: 768px) {
+  .leave-review-btn {
+    width: auto; /* Ensure it's responsive */
+    text-align: center;
+  }
+}
+#meet-the-parents {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.main__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.parent-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem; /* Increase vertical spacing between rows */
+  gap: 4rem; /* Increase spacing between image and description */
+}
+
+.parent-image {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center the image within its column */
+}
+
+.parent-image img {
+  width: 115%;
+  max-width: 350px; /* Increase max width for the image */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.parent-description {
+  flex: 2; /* Allow the description to take up more space */
+  text-align: left;
+  padding: 0 1rem; /* Add padding around the description */
+}
+
+.parent-description h2 {
+  font-size: 2rem;
+  color: #007991;
+  margin-bottom: 0.5rem;
+}
+
+.parent-description h3 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.parent-description p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 768px) {
+  .parent-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .parent-image {
+    margin-bottom: 1rem;
+  }
+
+  .parent-description {
+    text-align: center;
+  }
+}
+.navbar__call {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.call-now-button {
+  background: #007991;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.call-now-button:hover {
+  background: #bdc3c7;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 960px) {
+  .navbar__menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center; /* Center align menu items */
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .navbar__call {
+    width: 100%; /* Make sure the button spans the full width */
+    display: flex;
+    justify-content: center; /* Center align the button */
+    margin-top: 20px; /* Add some spacing above */
+  }
+
+  .call-now-button {
+    width: auto; /* Allow natural width */
+    padding: 10px 30px; /* Adjust padding for better appearance */
+    text-align: center;
+    border-radius: 5px;
+  }
+}
+
+
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Guardian Home Section */
+.application-section {
+  background-color: #f9f9f9; /* Light background to match theme */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.application-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+}
+
+.application-container h1 {
+  font-size: 2.5rem;
+  color: #007991; /* Theme matching color */
+  margin-bottom: 20px;
+}
+
+.application-container h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.application-container p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Form Styling */
+.application-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.application-form label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.application-form input,
+.application-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+.application-form input:focus,
+.application-form textarea:focus {
+  outline: none;
+  border-color: #007991;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+.application-form textarea {
+  resize: none;
+}
+
+.application-form .main__btn {
+  padding: 12px;
+  background: linear-gradient(to right, #78ffd6, #007991);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.application-form .main__btn:hover {
+  background: #bdc3c7;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .application-container {
+    padding: 30px;
+  }
+
+  .application-container h1 {
+    font-size: 2rem;
+  }
+
+  .application-container p {
+    font-size: 0.9rem;
+  }
+
+  .application-container h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .puppy-cards {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards horizontally */
+  }
+
+  .puppy-card {
+    width: 90%; /* Make each card nearly full-width */
+    max-width: 400px; /* Prevent excessively wide cards on larger screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .puppies-section {
+    text-align: center; /* Ensures all text inside is centered */
+  }
+
+  .litter h2 {
+    text-align: center; /* Centers each litter's title */
+    width: 100%; /* Ensures full width for proper centering */
+  }
+}
+@media screen and (max-width: 960px) {
+  .navbar__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  /* Adjust Logo */
+  .logo-image {
+    width: 70px; /* Smaller logo */
+    height: auto;
+    margin-left: 10px;
+  }
+
+  /* Move dropdown menu (hamburger) to the right */
+  .navbar__toggle {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    cursor: pointer;
+  }
+}
+
+/* Remove or comment out the following CSS */
+.navbar__call {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.call-now-button {
+  background: #007991;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.call-now-button:hover {
+  background: #bdc3c7;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar__call {
+    width: 100%; /* Make sure the button spans the full width */
+    display: flex;
+    justify-content: center; /* Center align the button */
+    margin-top: 20px; /* Add some spacing above */
+  }
+
+  .call-now-button {
+    width: auto; /* Allow natural width */
+    padding: 10px 30px; /* Adjust padding for better appearance */
+    text-align: center;
+    border-radius: 5px;
+  }
+}
+
+/* Style for the nested dropdown menu */
+.dropdown__menu {
+  display: none; /* Hide the dropdown by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+/* Show the dropdown menu when the parent is hovered or has a class */
+.dropdown:hover .dropdown__menu,
+.dropdown.active .dropdown__menu {
+  display: block;
+}
+
+/* Mobile-specific styles for nested dropdowns */
+@media screen and (max-width: 960px) {
+  .dropdown__menu {
+    position: static; /* Make the dropdown menu flow naturally in mobile view */
+    display: none; /* Hide the dropdown by default */
+    background-color: #f9f9f9; /* Light background for mobile */
+    border: none;
+    box-shadow: none;
+  }
+
+  .dropdown.active .dropdown__menu {
+    display: block; /* Show the dropdown when active */
+  }
+
+  .dropdown-toggle::after {
+    content: " ▼"; /* Add a visual indicator for dropdowns */
+    font-size: 0.8em;
+  }
+}
+/* Add a visual indicator for dropdowns */
+.dropdown-toggle::after {
+  content: " ▼"; /* Add a small arrow */
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+/* Mobile-specific styles for nested dropdowns */
+@media screen and (max-width: 960px) {
+  .dropdown__menu {
+    position: static; /* Make the dropdown menu flow naturally in mobile view */
+    display: none; /* Hide the dropdown by default */
+    background-color: #f9f9f9; /* Light background for mobile */
+    border: none;
+    box-shadow: none;
+  }
+
+  .dropdown.active .dropdown__menu {
+    display: block; /* Show the dropdown when active */
+  }
+}
+.puppy-card.pending {
+  border: 2px solid #ffcc00; /* Yellow border for pending puppies */
+}
+
+.puppy-card.available {
+  border: 2px solid #00cc00; /* Green border for available puppies */
+}
+
+.status {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.status.pending {
+  background: #ffcc00; /* Yellow background for pending status */
+  color: #000;
+}
+
+.status.available {
+  background: #00cc00; /* Green background for available status */
+  color: #fff;
+}
+
+/* Container for all puppy cards */
+.puppy-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Spacing between cards */
+  padding: 20px; /* Padding around the container */
+}
+
+/* Individual puppy card */
+.puppy-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for puppy cards */
+.puppy-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+/* Puppy card image */
+.puppy-card img {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Ensure the image scales properly */
+}
+
+/* Puppy info section */
+.puppy-info {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Puppy name */
+.puppy-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Puppy details (gender and birthdate) */
+.puppy-info p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* Puppy status */
+.puppy-info .status {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  background: #f0f0f0; /* Default background for status */
+  color: #333; /* Default text color for status */
+}
+
+/* Status-specific styles */
+.puppy-info .status.pending {
+  background: #ffcc00; /* Yellow for pending */
+  color: #000;
+}
+
+.puppy-info .status.available {
+  background: #00cc00; /* Green for available */
+  color: #fff;
+}
+
+.services__card {
+  position: relative;
+  margin: 10px;
+  height: 425px;
+  width: 300px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s ease-in;
+}
+
+.services__card-text {
+  position: absolute;
+  color: #f2f2f2;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 10px;
+  z-index: 2;
+}
+
+.map__btn {
+  margin-top: -12rem; /* Reduce this value to pull it closer */
+  display: flex;
+  justify-content: center;
+}
+
+/* Roof Repair Section */
+.roof-repair {
+  padding: 8rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+}
+
+.roof-repair h1 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.roof-repair p {
+  font-size: 1.2rem;
+  color: #203A43;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.roof-repair__images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.roof-repair__images img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.roof-repair__btn {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .roof-repair {
+    padding: 5rem 1rem;
+  }
+
+  .roof-repair h1 {
+    font-size: 2rem;
+  }
+
+  .roof-repair p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .roof-repair__images {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .roof-repair__images img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .roof-repair__btn {
+    margin-top: 2rem;
+  }
+}
+
+.replacement-roofing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 6rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.replacement-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.replacement-content h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.replacement-content h2 {
+  font-size: 1.8rem;
+  color: #444;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.replacement-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.replacement-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.replacement-content ul li {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.replacement-form {
+  flex: 0 1 350px;
+  background-color: #c5e5a7;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.replacement-form h3 {
+  font-size: 1.5rem;
+  color: #203A43;
+  margin-bottom: 0.5rem;
+}
+
+.replacement-form h4 {
+  font-size: 2.5rem;
+  color: #203A43;
+  margin: 0.5rem 0;
+}
+
+.replacement-form p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.replacement-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.replacement-form input {
+  padding: 0.8rem;
+  border: 1px solid #ccc
+
+  /* Roof Repair Page Styles */
+.roof-repair {
+  padding: 8rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+}
+
+.roof-repair h1, .roof-repair h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.roof-repair p {
+  font-size: 1.2rem;
+  color: #203A43;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.roof-repair ul, .roof-repair ol {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  padding: 0;
+}
+
+.roof-repair ul li, .roof-repair ol li {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  list-style: none;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.gallery-item {
+  text-align: center;
+  max-width: 400px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.roof-repair__btn {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .roof-repair h1, .roof-repair h2 {
+    font-size: 2rem;
+  }
+
+  .roof-repair p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .gallery {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .faq {
+    padding: 0 1rem;
+  }
+}
+/* Why Choose Us Section */
+.why-choose-us {
+  background: #f9f9f9;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.why-choose-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.why-choose-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.why-choose-item i {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.why-choose-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.why-choose-item p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* FAQ Section */
+.faq {
+  max-width: 800px;
+  margin: auto;
+  padding: 4rem 2rem;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.faq-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.faq-item p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
